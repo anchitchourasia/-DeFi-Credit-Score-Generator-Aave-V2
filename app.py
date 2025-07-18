@@ -32,6 +32,9 @@ with st.sidebar:
 # --- File Upload ---
 uploaded_file = st.file_uploader("📤 Upload your `user-wallet-transactions.json` file", type="json")
 
+st.info("⚠️ Please note: On Streamlit Cloud, it may take up to **1 minute** to process the uploaded file. Please be patient after uploading.")
+
+
 if uploaded_file:
     # --- Load JSON Data ---
     data = json.load(uploaded_file)
