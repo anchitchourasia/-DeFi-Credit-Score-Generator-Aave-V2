@@ -13,20 +13,21 @@ st.title("🏦 Aave V2 Wallet Credit Scoring Dashboard")
 
 # --- Sidebar: Sample JSON Download ---
 with st.sidebar:
-    st.markdown("## 📁 Download Sample JSON")
-    try:
-        with open("scripts/user-wallet-transactions.json", "rb") as f:
-            st.download_button(
-                label="⬇️ Download Sample File",
-                data=f,
-                file_name="user-wallet-transactions.json",
-                mime="application/json"
-            )
-    except FileNotFoundError:
-        st.warning("Sample file not found in /scripts folder.")
+    st.markdown("## 📁 Sample JSON File")
     
+    # External download link via Google Drive
+    st.markdown(
+        f"""
+        <a href="https://drive.google.com/uc?export=download&id=1ISFbAXxadMrt7Zl96rmzzZmEKZnyW7FS" target="_blank">
+            📥 <b>Click here to download sample user-transactions.json</b>
+        </a>
+        """,
+        unsafe_allow_html=True
+    )
+
     st.markdown("---")
     st.markdown("👈 Upload your JSON file on the main screen to analyze and score wallets.")
+
 
 # --- File Upload ---
 uploaded_file = st.file_uploader("📤 Upload your `user-wallet-transactions.json` file", type="json")
